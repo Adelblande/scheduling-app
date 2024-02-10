@@ -39,13 +39,13 @@ $ npx expo start
 
 ```
 
-## 🛠️ Construído com
+## 🛠️ Desenvolvido com as tecnologias
 
 - [React-Native](https://reactnative.dev/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Zod](https://zod.dev/)
 - [Expo](https://expo.dev/)
 - [Expo Router](https://docs.expo.dev/router/introduction/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Zod](https://zod.dev/)
 - [Zustand](https://zustand-demo.pmnd.rs/)
 
 <p>

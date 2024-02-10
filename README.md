@@ -34,6 +34,9 @@ $ npm install
 ou
 $ yarn install
 
+# Rode o comando para iniciar o fake da api
+$ npx json-server --watch server.json -p 3333
+
 # Rode o comando para iniciar o scheduling-app
 $ npx expo start
 

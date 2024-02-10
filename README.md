@@ -49,25 +49,23 @@ $ npx expo start
 - [Zustand](https://zustand-demo.pmnd.rs/)
 
 <p>
- <img alt="tela-de-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/tela-de-agendamento.png" width="400px">
+ <img alt="tela-de-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/tela-de-agendamento.png" width="200px">
 
- <img alt="cadastro-de-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/cadastro-de-agendamento.png" width="400px">
+ <img alt="cadastro-de-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/cadastro-de-agendamento.png" width="200px">
 
- <img alt="sem-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/sem-agendamento.png" width="400px">
+ <img alt="sem-agendamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/sem-agendamento.png" width="200px">
 
- <img alt="validações" src="https://github.com/Adelblande/scheduling-app/blob/main/images/validações.png" width="400px">
+ <img alt="validações" src="https://github.com/Adelblande/scheduling-app/blob/main/images/validações.png" width="200px">
 
- <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="400px">
-</p>
+ <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="200px">
 
-<p>
- <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="400px">
+ <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="200px">
 
- <img alt="calendário" src="https://github.com/Adelblande/scheduling-app/blob/main/images/calendário.png" width="400px">
+ <img alt="calendário" src="https://github.com/Adelblande/scheduling-app/blob/main/images/calendário.png" width="200px">
 
- <img alt="agendamento-almoço" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-almoço.png" width="400px">
+ <img alt="agendamento-almoço" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-almoço.png" width="200px">
 
- <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="400px">
+ <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
 
- <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="400px">
+ <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
 </p>

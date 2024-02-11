@@ -21,6 +21,7 @@ import { useSchedules } from "../../hooks/schedules";
 import { Schedule } from "../../interfaces/schedule";
 import { useSchedulingStore } from "../../store/scheduling";
 import { getDateEnd } from "../../utils/getDateEnd";
+import { verifyHasPlate } from "../../utils/verifyHasPlate";
 
 const schema = z.object({
   name: z
@@ -118,6 +119,11 @@ export default function NewSchedule() {
 
     if (schedulingsOfHour.length > 0) {
       return showAlert("Horario indisponivel.");
+    }
+
+    const hasSchedule = verifyHasPlate(newData.plate, schedules);
+    if (hasSchedule) {
+      return showAlert("Esse veiculo já esta agendado.");
     }
 
     const created = await createScheduling(newData);

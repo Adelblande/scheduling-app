@@ -1,8 +1,8 @@
-import { Text, View, TouchableOpacity, Alert } from "react-native";
+import { Alert, Text, TouchableOpacity, View } from "react-native";
 import { Schedule } from "../../interfaces/schedule";
 
-import { styles } from "./styles";
 import { formatDate, formatHour } from "../../utils/format";
+import { styles } from "./styles";
 
 interface CardScheduleProps {
   schedule: Schedule;
@@ -40,11 +40,16 @@ export function CardSchedule({
       <View style={styles.containerInfo}>
         <View style={styles.line}>
           <Text style={styles.label}>
+            Placa: <Text style={styles.info}>{schedule.plate}</Text>
+          </Text>
+        </View>
+        <View style={styles.line}>
+          <Text style={styles.label}>
             Nome: <Text style={styles.info}>{schedule.name}</Text>
           </Text>
 
           <Text style={styles.label}>
-            Lavagem:
+            Lavagem:{" "}
             <Text style={styles.info}>{schedule.type.toUpperCase()}</Text>
           </Text>
         </View>
@@ -58,11 +63,11 @@ export function CardSchedule({
         </View>
         <View style={styles.line}>
           <Text style={styles.label}>
-            Data:
+            Data:{" "}
             <Text style={styles.info}>{formatDate(schedule.dateIni)}</Text>
           </Text>
           <Text style={styles.label}>
-            Hora:
+            Hora:{" "}
             <Text style={styles.info}>{formatHour(schedule.dateIni)}</Text>
           </Text>
         </View>

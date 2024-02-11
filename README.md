@@ -71,4 +71,6 @@ $ npx expo start
  <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
 
  <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
+
+ <img alt="veiculo-agendado" src="https://github.com/Adelblande/scheduling-app/blob/main/images/veiculo-agendado.png" width="200px">
 </p>

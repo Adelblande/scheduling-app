@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { Schedule } from "../interfaces/schedule";
+import { sortSchedules } from "../utils/sort";
 
 interface SchedulingStoreProps {
   schedules: Schedule[];
@@ -12,10 +13,15 @@ export const useSchedulingStore = create<SchedulingStoreProps>()(
   (set, get) => ({
     schedules: [],
     addSchedules(schedules) {
+      sortSchedules(schedules);
       set(() => ({ schedules: [...schedules] }));
     },
     addScheduling(schedule) {
-      set((state) => ({ schedules: [...state.schedules, schedule] }));
+      set((state) => {
+        const unordened = [...state.schedules, schedule];
+        const ordened = sortSchedules(unordened);
+        return { schedules: ordened };
+      });
     },
     removeScheduling(id) {
       set((state) => {

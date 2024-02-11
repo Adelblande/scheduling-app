@@ -1,28 +1,26 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  View,
-  ToastAndroid,
-  Alert,
-} from "react-native";
-import { useForm, Controller } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import DatePicker from "@react-native-community/datetimepicker";
 import { useNavigation } from "expo-router";
 import Moment from "moment";
+import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { z } from "zod";
 
+import { CustomCalendar } from "../../components/Calendar";
+import { HeaderSchedules } from "../../components/HeaderSchedules";
 import { Input } from "../../components/Input";
 import { useSchedules } from "../../hooks/schedules";
-import { HeaderSchedules } from "../../components/HeaderSchedules";
-import { useSchedulingStore } from "../../store/scheduling";
 import { Schedule } from "../../interfaces/schedule";
-import { CustomCalendar } from "../../components/Calendar";
+import { useSchedulingStore } from "../../store/scheduling";
 import { getDateEnd } from "../../utils/getDateEnd";
-import { sortSchedules } from "../../utils/sort";
 
 const schema = z.object({
   name: z
@@ -126,7 +124,7 @@ export default function NewSchedule() {
     if (created.id) {
       addScheduling(created);
       reset();
-      sortSchedules(schedules);
+
       navigation.goBack();
     }
   }

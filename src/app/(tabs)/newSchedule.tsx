@@ -112,8 +112,10 @@ export default function NewSchedule() {
 
     const schedulingsOfHour = schedulingsOfDay.filter((schedule) => {
       return (
-        Moment(dateIni).isSameOrAfter(schedule.dateIni) &&
-        Moment(dateIni).isBefore(schedule.dateEnd)
+        Moment(dateIni).isBetween(schedule.dateIni, schedule.dateEnd) ||
+        Moment(dateEnd).isBetween(schedule.dateIni, schedule.dateEnd) ||
+        (Moment(dateIni).isSameOrAfter(schedule.dateIni) &&
+          Moment(dateIni).isBefore(schedule.dateEnd))
       );
     });
 
@@ -130,7 +132,6 @@ export default function NewSchedule() {
     if (created.id) {
       addScheduling(created);
       reset();
-
       navigation.goBack();
     }
   }

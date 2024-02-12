@@ -65,6 +65,7 @@ export type NewScheduleProps = z.infer<typeof schema>;
 export default function NewSchedule() {
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [isTimePickerOpen, setIsTimePickerOpen] = useState(false);
+  const [selected, setSelected] = useState("");
 
   const { createScheduling } = useSchedules();
   const { addScheduling, schedules } = useSchedulingStore();
@@ -147,6 +148,7 @@ export default function NewSchedule() {
 
   const datePickerHandler = (selectedDate: any) => {
     setIsDatePickerOpen(false);
+    setSelected(selectedDate.dateString);
     const dateSelected = new Date(selectedDate.dateString);
 
     if (dateSelected.getDay() === 5 || dateSelected.getDay() === 6) {
@@ -243,7 +245,10 @@ export default function NewSchedule() {
         )}
 
         {isDatePickerOpen && (
-          <CustomCalendar onDayPress={(day) => datePickerHandler(day)} />
+          <CustomCalendar
+            onDayPress={(day) => datePickerHandler(day)}
+            selected={selected}
+          />
         )}
 
         <Controller

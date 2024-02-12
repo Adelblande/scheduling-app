@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Modal, View } from "react-native";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { styles } from "./styles";
@@ -49,11 +48,10 @@ LocaleConfig.defaultLocale = "pt";
 
 interface CustomCalendarProps {
   onDayPress: (day: any) => void;
+  selected: string;
 }
 
-export function CustomCalendar({ onDayPress }: CustomCalendarProps) {
-  const [selected, setSelected] = useState("");
-
+export function CustomCalendar({ onDayPress, selected }: CustomCalendarProps) {
   return (
     <Modal animationType="fade" transparent>
       <View style={styles.container}>
@@ -65,7 +63,8 @@ export function CustomCalendar({ onDayPress }: CustomCalendarProps) {
               textSectionTitleColor: "#6b299a",
               selectedDayBackgroundColor: "#6b299a",
               selectedDayTextColor: "#ffffff",
-              todayTextColor: "#6b299a",
+              todayTextColor: "#fff",
+              todayBackgroundColor: "#ff0090",
               dayTextColor: "#000",
               textDisabledColor: "#cdcdcd",
             }}
@@ -81,6 +80,9 @@ export function CustomCalendar({ onDayPress }: CustomCalendarProps) {
                 disableTouchEvent: true,
               },
             }}
+            minDate={`${new Date()}`}
+            initialDate={`${new Date()}`}
+            disableAllTouchEventsForDisabledDays
           />
         </View>
       </View>

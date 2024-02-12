@@ -76,7 +76,6 @@ export default function NewSchedule() {
     control,
     handleSubmit,
     setValue,
-    getValues,
     reset,
     formState: { errors },
   } = useForm<NewScheduleProps>({

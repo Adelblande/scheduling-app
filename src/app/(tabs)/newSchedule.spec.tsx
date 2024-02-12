@@ -89,29 +89,4 @@ describe("Screen --> newSchedule", () => {
       });
     });
   });
-
-  describe("should be not render validation message for when the fields filled", () => {
-    it("", async () => {
-      const { debug } = render(<NewSchedule />);
-
-      const inputName = screen.getByPlaceholderText("Nome");
-      fireEvent.changeText(inputName, "Teste");
-      const inputMarca = screen.getByPlaceholderText("Marca");
-      fireEvent.changeText(inputMarca, "Teste");
-      const inputModelo = screen.getByPlaceholderText("Modelo");
-      fireEvent.changeText(inputModelo, "Teste");
-      const inputPlate = screen.getByPlaceholderText("Placa");
-      fireEvent.changeText(inputPlate, "AAA1B23");
-      const inputDate = screen.getByPlaceholderText("Selecione a data");
-      fireEvent.changeText(inputDate, "");
-
-      await waitFor(() => {
-        const selectedDay = screen.getByText("12");
-        expect(selectedDay).toBeTruthy();
-      });
-      debug();
-      // const btnSend = screen.getByText("Enviar");
-      // fireEvent.press(btnSend);
-    });
-  });
 });

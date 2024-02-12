@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { z } from "zod";
 
-import { CustomCalendar } from "../../components/Calendar";
+import { CustomCalendar } from "../../components/CustomCalendar";
 import { HeaderSchedules } from "../../components/HeaderSchedules";
 import { Input } from "../../components/Input";
 import { useSchedules } from "../../hooks/schedules";
@@ -75,6 +75,7 @@ export default function NewSchedule() {
     control,
     handleSubmit,
     setValue,
+    getValues,
     reset,
     formState: { errors },
   } = useForm<NewScheduleProps>({

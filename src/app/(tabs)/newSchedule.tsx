@@ -1,28 +1,27 @@
-import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  View,
-  ToastAndroid,
-  Alert,
-} from "react-native";
-import { useForm, Controller } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import DatePicker from "@react-native-community/datetimepicker";
 import { useNavigation } from "expo-router";
 import Moment from "moment";
+import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { z } from "zod";
 
+import { CustomCalendar } from "../../components/CustomCalendar";
+import { HeaderSchedules } from "../../components/HeaderSchedules";
 import { Input } from "../../components/Input";
 import { useSchedules } from "../../hooks/schedules";
-import { HeaderSchedules } from "../../components/HeaderSchedules";
-import { useSchedulingStore } from "../../store/scheduling";
 import { Schedule } from "../../interfaces/schedule";
-import { CustomCalendar } from "../../components/Calendar";
+import { useSchedulingStore } from "../../store/scheduling";
 import { getDateEnd } from "../../utils/getDateEnd";
-import { sortSchedules } from "../../utils/sort";
+import { verifyHasPlate } from "../../utils/verifyHasPlate";
 
 const schema = z.object({
   name: z
@@ -76,6 +75,7 @@ export default function NewSchedule() {
     control,
     handleSubmit,
     setValue,
+    getValues,
     reset,
     formState: { errors },
   } = useForm<NewScheduleProps>({
@@ -113,8 +113,10 @@ export default function NewSchedule() {
 
     const schedulingsOfHour = schedulingsOfDay.filter((schedule) => {
       return (
-        Moment(dateIni).isSameOrAfter(schedule.dateIni) &&
-        Moment(dateIni).isBefore(schedule.dateEnd)
+        Moment(dateIni).isBetween(schedule.dateIni, schedule.dateEnd) ||
+        Moment(dateEnd).isBetween(schedule.dateIni, schedule.dateEnd) ||
+        (Moment(dateIni).isSameOrAfter(schedule.dateIni) &&
+          Moment(dateIni).isBefore(schedule.dateEnd))
       );
     });
 
@@ -122,11 +124,15 @@ export default function NewSchedule() {
       return showAlert("Horario indisponivel.");
     }
 
+    const hasSchedule = verifyHasPlate(newData.plate, schedules);
+    if (hasSchedule) {
+      return showAlert("Esse veiculo já esta agendado.");
+    }
+
     const created = await createScheduling(newData);
     if (created.id) {
       addScheduling(created);
       reset();
-      sortSchedules(schedules);
       navigation.goBack();
     }
   }

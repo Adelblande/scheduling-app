@@ -1,10 +1,10 @@
-import { View, SafeAreaView, FlatList, StyleSheet, Text } from "react-native";
-import { useSchedules } from "../../hooks/schedules";
 import { useEffect } from "react";
-import { HeaderSchedules } from "../../components/HeaderSchedules";
+import { FlatList, SafeAreaView, View } from "react-native";
 import { CardSchedule } from "../../components/CardSchedule";
-import { useSchedulingStore } from "../../store/scheduling";
 import { EmptyScheduling } from "../../components/EmptyScheduling";
+import { HeaderSchedules } from "../../components/HeaderSchedules";
+import { useSchedules } from "../../hooks/schedules";
+import { useSchedulingStore } from "../../store/scheduling";
 import { sortSchedules } from "../../utils/sort";
 
 export default function Schedules() {

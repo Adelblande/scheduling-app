@@ -19,10 +19,36 @@ Atividades
 
 ### Clonando e rodando o projeto
 
+Se vc tiver docker e docker-compose instalado em sua maquina, pode clonar o backend
+e roda-lo executando os comandos abaixo senão clone só o frontend e rode a fake api
+
+```bash
+
+# Se ainda não clonou o scheduling-api
+$ git clone https://github.com/Adelblande/scheduling-api.git
+
+# Navegue para dentro da pasta scheduling-api
+$ cd scheduling-api
+
+# Instale as dependencias
+$ npm install
+
+# Rode o comando para subir os containers
+$ docker-compose up -d
+
+# Acesse o container da API com o comando abaixo
+$ docker exec -it schedules-api bash
+
+# Dentro do container rode o comando para iniciar a API
+$ npm run start:dev
+
+```
+
 Você pode rodar no dispositivo fisico ou emulador, eu uso emulador (Android Studio)
 Para rodar no dispositivo fisico, precisa instala o Expo Go no celular e apontar para o QR code que aparece no terminal depois de rodar os comandos abaixo, se estiver no emulador o Expo Go será instalado automaticamente e o projeto scheduling-app aparecerá na tela.
 
 ```bash
+
 # Se ainda não clonou o scheduling-app
 $ git clone https://github.com/Adelblande/scheduling-app.git
 
@@ -31,8 +57,6 @@ $ cd scheduling-app
 
 # Instale as dependencias
 $ npm install
-ou
-$ yarn install
 
 # Rode o comando para iniciar o fake da api
 $ npx json-server --watch server.json -p 3333

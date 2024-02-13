@@ -4,9 +4,7 @@ export const useSchedules = () => {
   const { EXPO_PUBLIC_BASE_URL_API } = process.env;
 
   const getSchedules = async (): Promise<Schedule[]> => {
-    const response = await fetch(
-      `${EXPO_PUBLIC_BASE_URL_API}/schedules?status=pending`
-    );
+    const response = await fetch(`${EXPO_PUBLIC_BASE_URL_API}/schedules`);
     const schedules = await response.json();
 
     return schedules;

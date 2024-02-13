@@ -5,7 +5,6 @@ import { EmptyScheduling } from "../../components/EmptyScheduling";
 import { HeaderSchedules } from "../../components/HeaderSchedules";
 import { useSchedules } from "../../hooks/schedules";
 import { useSchedulingStore } from "../../store/scheduling";
-import { sortSchedules } from "../../utils/sort";
 
 export default function Schedules() {
   const { getSchedules, updateSchedulingStatus } = useSchedules();
@@ -27,7 +26,6 @@ export default function Schedules() {
 
   const fetchSchedules = async () => {
     const schedules = await getSchedules();
-    sortSchedules(schedules);
     addSchedules(schedules);
   };
 

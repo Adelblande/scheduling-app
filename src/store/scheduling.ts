@@ -13,8 +13,11 @@ export const useSchedulingStore = create<SchedulingStoreProps>()(
   (set, get) => ({
     schedules: [],
     addSchedules(schedules) {
-      sortSchedules(schedules);
-      set(() => ({ schedules: [...schedules] }));
+      const pending = schedules.filter(
+        (schedule) => schedule.status === "pending"
+      );
+      const ordened = sortSchedules(pending);
+      set(() => ({ schedules: [...ordened] }));
     },
     addScheduling(schedule) {
       set((state) => {

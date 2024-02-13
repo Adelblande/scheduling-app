@@ -6,7 +6,7 @@
       "model": "ba",
       "plate": "BAB1A22",
       "type": "simples",
-      "status": "pending",
+      "status": "done",
       "dateIni": "2024-02-12T13:00:00.000Z",
       "dateEnd": "2024-02-12T13:30:00.000Z",
       "id": "0P4PPhQ"
@@ -28,10 +28,21 @@
       "model": "teste",
       "plate": "AAA1A11",
       "type": "simples",
-      "status": "pending",
+      "status": "cancel",
       "dateIni": "2024-02-12T13:30:00.000Z",
       "dateEnd": "2024-02-12T14:00:00.000Z",
       "id": "kr0ma_I"
+    },
+    {
+      "name": "Iza",
+      "brand": "Audi",
+      "model": "R8",
+      "plate": "IZA1B12",
+      "type": "simples",
+      "status": "pending",
+      "dateIni": "2024-02-14T17:45:00.000Z",
+      "dateEnd": "2024-02-14T18:15:00.000Z",
+      "id": "0DUyQs7"
     }
   ]
 }

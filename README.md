@@ -90,9 +90,9 @@ $ npx expo start
 
  <img alt="calendário" src="https://github.com/Adelblande/scheduling-app/blob/main/images/calendario.png" width="200px">
 
- <img alt="agendamento-almoço" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-almoco.png" width="200px">
+ <img alt="selecao-de-horas" src="https://github.com/Adelblande/scheduling-app/blob/main/images/selecao-de-horas.png" width="200px">
 
- <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
+ <img alt="agendamento-almoço" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-almoco.png" width="200px">
 
  <img alt="agendamento-fora-horario" src="https://github.com/Adelblande/scheduling-app/blob/main/images/agendamento-fora-horario.png" width="200px">
 

@@ -86,7 +86,7 @@ $ npx expo start
 
  <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="200px">
 
- <img alt="confirme-cancelamento" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-cancelamento.png" width="200px">
+ <img alt="confirme-concluir" src="https://github.com/Adelblande/scheduling-app/blob/main/images/confirme-concluir.png" width="200px">
 
  <img alt="calendário" src="https://github.com/Adelblande/scheduling-app/blob/main/images/calendario.png" width="200px">
 
